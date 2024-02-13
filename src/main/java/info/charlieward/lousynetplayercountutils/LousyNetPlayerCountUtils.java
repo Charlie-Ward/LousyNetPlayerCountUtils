@@ -5,7 +5,8 @@ import info.charlieward.lousynetplayercountutils.commands.reloadCommand;
 import info.charlieward.lousynetplayercountutils.commands.resetCommand;
 import info.charlieward.lousynetplayercountutils.commands.serverName;
 import info.charlieward.lousynetplayercountutils.files.CustomConfig;
-import info.charlieward.lousynetplayercountutils.listeners.playerCountChange;
+import info.charlieward.lousynetplayercountutils.listeners.playerCountChangeAdd;
+import info.charlieward.lousynetplayercountutils.listeners.playerCountChangeDown;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -34,7 +35,8 @@ public final class LousyNetPlayerCountUtils extends JavaPlugin {
         getCommand("manualCountChanger").setExecutor(new manualChange(this));
         getCommand("serverInfo").setExecutor(new serverName(this));
 
-        getServer().getPluginManager().registerEvents(new playerCountChange(this), this);
+        getServer().getPluginManager().registerEvents(new playerCountChangeAdd(this), this);
+        getServer().getPluginManager().registerEvents(new playerCountChangeDown(this), this);
 
         int playerCount = Bukkit.getOnlinePlayers().size();
         jedis.set(CustomConfig.get().getString("Server ID"), Integer.toString(playerCount));

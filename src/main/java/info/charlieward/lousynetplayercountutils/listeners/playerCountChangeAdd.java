@@ -6,21 +6,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
-import org.bukkit.event.player.PlayerQuitEvent;
 
-public class playerCountChange implements Listener {
+public class playerCountChangeAdd implements Listener {
     LousyNetPlayerCountUtils plugin;
-    public playerCountChange(LousyNetPlayerCountUtils plugin) {
+    public playerCountChangeAdd(LousyNetPlayerCountUtils plugin) {
         this.plugin = plugin;
     }
     @EventHandler
     public void playerJoins(PlayerJoinEvent event) {
-        int playerCount = Bukkit.getOnlinePlayers().size();
-        plugin.jedis.set(CustomConfig.get().getString("Server ID"), Integer.toString(playerCount));
-    }
-
-    @EventHandler
-    public void playerLeaves(PlayerQuitEvent event) {
         int playerCount = Bukkit.getOnlinePlayers().size();
         plugin.jedis.set(CustomConfig.get().getString("Server ID"), Integer.toString(playerCount));
     }
