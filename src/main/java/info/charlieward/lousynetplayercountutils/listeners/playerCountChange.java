@@ -16,12 +16,12 @@ public class playerCountChange implements Listener {
     @EventHandler
     public void playerJoins(PlayerJoinEvent event) {
         int playerCount = Bukkit.getOnlinePlayers().size();
-        plugin.jedis.set(CustomConfig.get().getString("Server ID - Must be unique to all other server IDs on the network"), Integer.toString(playerCount));
+        plugin.jedis.set(CustomConfig.get().getString("Server ID"), Integer.toString(playerCount));
     }
 
     @EventHandler
     public void playerLeaves(PlayerQuitEvent event) {
         int playerCount = Bukkit.getOnlinePlayers().size();
-        plugin.jedis.set(CustomConfig.get().getString("Server ID - Must be unique to all other server IDs on the network"), Integer.toString(playerCount));
+        plugin.jedis.set(CustomConfig.get().getString("Server ID"), Integer.toString(playerCount));
     }
 }

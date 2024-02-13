@@ -27,7 +27,7 @@ public class manualChange implements CommandExecutor {
                 System.out.println("manualCountChange <Value>");
             } else if (args.length == 1) {
                 System.out.println("[LousyNet-PlayerCount-Utils] Updating server: " + CustomConfig.get().getString("Server ID - Must be unique to all other server IDs on the network") + " to have " + args[0] + " players");
-                plugin.jedis.set(CustomConfig.get().getString("Server ID - Must be unique to all other server IDs on the network"), args[0]);
+                plugin.jedis.set(CustomConfig.get().getString("Server ID"), args[0]);
             } else {
                 System.out.println("[LousyNet-PlayerCount-Utils] Please only provide one argument");
                 System.out.println("manualCountChange <Value>");

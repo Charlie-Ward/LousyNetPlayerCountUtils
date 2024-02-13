@@ -24,7 +24,7 @@ public final class LousyNetPlayerCountUtils extends JavaPlugin {
         saveDefaultConfig();
 
         CustomConfig.setup();
-        CustomConfig.get().addDefault("Server ID - Must be unique to all other server IDs on the network", "");
+        CustomConfig.get().addDefault("Server ID", "");
         CustomConfig.get().options().copyDefaults(true);
         CustomConfig.save();
 
@@ -35,13 +35,13 @@ public final class LousyNetPlayerCountUtils extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new playerCountChange(this), this);
 
         int playerCount = Bukkit.getOnlinePlayers().size();
-        jedis.set(CustomConfig.get().getString("Server ID - Must be unique to all other server IDs on the network"), Integer.toString(playerCount));
+        jedis.set(CustomConfig.get().getString("Server ID"), Integer.toString(playerCount));
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        jedis.set(CustomConfig.get().getString("Server ID - Must be unique to all other server IDs on the network"), "null");
+        jedis.set(CustomConfig.get().getString("Server ID"), "null");
         getLogger().info("LousyNet-PlayerCount-Utils v." + this.getDescription().getVersion() + " has been disabled.");
     }
 }
