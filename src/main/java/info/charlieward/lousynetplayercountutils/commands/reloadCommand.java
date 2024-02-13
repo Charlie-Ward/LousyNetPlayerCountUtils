@@ -16,9 +16,9 @@ public class reloadCommand implements CommandExecutor {
             Player p = (Player) sender;
             if (p.hasPermission("LousyNetPlayerCountUtils.admin")) {
                 CustomConfig.reload();
-                p.sendMessage(ChatColor.BLUE + "[LousyNet-PlayerCount-Utils]" + ChatColor.GREEN + "Request for config to be reloaded has been sent");
+                p.sendMessage(ChatColor.BLUE + "[LousyNet-PlayerCount-Utils]" + ChatColor.GREEN + " Request for config to be reloaded has been sent");
             } else {
-                p.sendMessage(ChatColor.BLUE + "[LousyNet-PlayerCount-Utils" + ChatColor.RED + "You do not have the correct permissions to run this command");
+                p.sendMessage(ChatColor.BLUE + "[LousyNet-PlayerCount-Utils]" + ChatColor.RED + " You do not have the correct permissions to run this command");
             }
         } else if (sender instanceof ConsoleCommandSender) {
             CustomConfig.reload();
