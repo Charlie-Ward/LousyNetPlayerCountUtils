@@ -15,6 +15,7 @@ public class playerCountChangeDown implements Listener {
     }
     @EventHandler
     public void playerLeaves(PlayerQuitEvent event) {
+        System.out.println("Player left");
         int playerCount = Bukkit.getOnlinePlayers().size();
         plugin.jedis.set(CustomConfig.get().getString("Server ID"), Integer.toString(playerCount));
     }
