@@ -41,7 +41,7 @@ public final class LousyNetPlayerCountUtils extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        jedis.set(CustomConfig.get().getString("Server ID"), "null");
+        jedis.set(CustomConfig.get().getString("Server ID"), "offline");
         getLogger().info("LousyNet-PlayerCount-Utils v." + this.getDescription().getVersion() + " has been disabled.");
     }
 }
