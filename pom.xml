@@ -6,7 +6,7 @@
 
   <groupId>info.charlieward</groupId>
   <artifactId>LousyNetPlayerCountUtils</artifactId>
-  <version>1.3.2</version>
+  <version>1.4</version>
   <packaging>jar</packaging>
 
   <name>LousyNet-PlayerCount-Utils</name>
