@@ -3,6 +3,7 @@ package info.charlieward.lousynetplayercountutils;
 import info.charlieward.lousynetplayercountutils.commands.reloadCommand;
 import info.charlieward.lousynetplayercountutils.commands.resetCommand;
 import info.charlieward.lousynetplayercountutils.files.CustomConfig;
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import redis.clients.jedis.Jedis;
@@ -28,6 +29,8 @@ public final class LousyNetPlayerCountUtils extends JavaPlugin {
         getCommand("playerCountReload").setExecutor(new reloadCommand());
         getCommand("playerCountReset").setExecutor(new resetCommand(this));
 
+        int playerCount = Bukkit.getOnlinePlayers().size();
+        jedis.set(CustomConfig.get().getString("Server ID - Must be unique to all other server IDs on the network"), Integer.toString(playerCount));
     }
 
     @Override
