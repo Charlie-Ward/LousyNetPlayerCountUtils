@@ -17,3 +17,5 @@ commands:
     usage: /manualCountChanger <Value>
     permission: LousyNetPlayerCountUtils.admin
     description: Manually changes the value sent to the database of the player count
+  serverInfo:
+    usage: /serverInfo

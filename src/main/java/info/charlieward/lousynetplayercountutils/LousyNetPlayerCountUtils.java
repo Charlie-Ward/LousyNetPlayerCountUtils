@@ -3,6 +3,7 @@ package info.charlieward.lousynetplayercountutils;
 import info.charlieward.lousynetplayercountutils.commands.manualChange;
 import info.charlieward.lousynetplayercountutils.commands.reloadCommand;
 import info.charlieward.lousynetplayercountutils.commands.resetCommand;
+import info.charlieward.lousynetplayercountutils.commands.serverName;
 import info.charlieward.lousynetplayercountutils.files.CustomConfig;
 import info.charlieward.lousynetplayercountutils.listeners.playerCountChange;
 import org.bukkit.Bukkit;
@@ -31,6 +32,7 @@ public final class LousyNetPlayerCountUtils extends JavaPlugin {
         getCommand("playerCountReload").setExecutor(new reloadCommand());
         getCommand("playerCountReset").setExecutor(new resetCommand(this));
         getCommand("manualCountChanger").setExecutor(new manualChange(this));
+        getCommand("serverInfo").setExecutor(new serverName(this));
 
         getServer().getPluginManager().registerEvents(new playerCountChange(this), this);
 
