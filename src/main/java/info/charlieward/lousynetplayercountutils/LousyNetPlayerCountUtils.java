@@ -1,5 +1,6 @@
 package info.charlieward.lousynetplayercountutils;
 
+import info.charlieward.lousynetplayercountutils.files.CustomConfig;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class LousyNetPlayerCountUtils extends JavaPlugin {
@@ -7,7 +8,15 @@ public final class LousyNetPlayerCountUtils extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        getLogger().info("LousyNet-PlayerCount-Utils v." + this.getDescription().getVersion() + " has loaded.");
 
+        getConfig().options(). copyDefaults();
+        saveDefaultConfig();
+
+        CustomConfig.setup();
+        CustomConfig.get().addDefault("Server Name", "");
+        CustomConfig.get().options().copyDefaults(true);
+        CustomConfig.save();
     }
 
     @Override
