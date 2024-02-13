@@ -23,7 +23,7 @@ public class resetCommand implements CommandExecutor {
             Player player = (Player) sender;
             if(player.hasPermission("LousyNetPlayerCountUtils.admin")){
                 int playerCount = Bukkit.getOnlinePlayers().size();
-                plugin.jedis.set(CustomConfig.get().getString("Server ID"), Integer.toString(playerCount));
+                plugin.jedis.set(CustomConfig.get().getString("Server ID - Must be unique to all other server IDs on the network"), Integer.toString(playerCount));
                 player.sendMessage(ChatColor.BLUE + "[LousyNet-PlayerCount-Utils]" + ChatColor.GREEN + " Player count reset sent for this server");
             } else {
                 player.sendMessage(ChatColor.BLUE + "[LousyNet-PlayerCount-Utils]" + ChatColor.RED + " You do not have the correct permissions to run this command");
