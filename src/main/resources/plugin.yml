@@ -4,3 +4,8 @@ main: info.charlieward.lousynetplayercountutils.LousyNetPlayerCountUtils
 api-version: '1.17'
 authors:
   - LousyBoi
+commands:
+  playerCountReload:
+    usage: /playerCountReload
+    permission: LousyNetPlayerCountUtils.admin
+    description: Reload the config file for LousyNet-PlayerCount-Utils
