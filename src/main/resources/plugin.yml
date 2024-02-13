@@ -2,3 +2,5 @@ name: LousyNet-PlayerCount-Utils
 version: '${project.version}'
 main: info.charlieward.lousynetplayercountutils.LousyNetPlayerCountUtils
 api-version: '1.17'
+authors:
+  - LousyBoi
