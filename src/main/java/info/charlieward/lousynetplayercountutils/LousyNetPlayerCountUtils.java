@@ -41,7 +41,7 @@ public final class LousyNetPlayerCountUtils extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
-        jedis.set(CustomConfig.get().getString("Server ID - Must be unique to all other server IDs on the network"), "0");
+        jedis.set(CustomConfig.get().getString("Server ID - Must be unique to all other server IDs on the network"), "null");
         getLogger().info("LousyNet-PlayerCount-Utils v." + this.getDescription().getVersion() + " has been disabled.");
     }
 }
