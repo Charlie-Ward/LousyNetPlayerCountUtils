@@ -13,3 +13,7 @@ commands:
     usage: /playerCountReset
     permission: LousyNetPlayerCountUtils.admin
     description: Resets the player count in the database
+  manualCountChanger:
+    usage: /manualCountChanger <Value>
+    permission: LousyNetPlayerCountUtils.admin
+    description: Manually changes the value sent to the database of the player count
