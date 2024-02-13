@@ -9,3 +9,7 @@ commands:
     usage: /playerCountReload
     permission: LousyNetPlayerCountUtils.admin
     description: Reload the config file for LousyNet-PlayerCount-Utils
+  playerCountReset:
+    usage: /playerCountReset
+    permission: LousyNetPlayerCountUtils.admin
+    description: Resets the player count in the database
